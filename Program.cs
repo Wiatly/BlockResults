@@ -7,9 +7,17 @@
 // [“1234”, “1567”, “-2”, “computer science”] → [“-2”]
 // [“Russia”, “Denmark”, “Kazan”] → []
 
-string [] startMass =  {"Peter", "332", "each", "--1","0","Kerrigan","Pencil","424"};
 
-for (int i=0; i< startMass.Length; i++)
+string[] startMass = { "Peter", "332", "each", "--1", "0", "Kerrigan", "Pencil", "424" };
+string[] outMass = new string[0];
+
+for (int i = 0; i < startMass.Length; i++)
 {
-    if (startMass[i].Length<=3) Console.WriteLine(startMass[i]);
+    if (startMass[i].Length <= 3)
+    {
+        Array.Resize(ref outMass, outMass.Length + 1);
+        outMass[outMass.Length-1] = startMass[i];
+    }
 }
+
+//foreach (string item in outMass) Console.WriteLine($"{item} ");
